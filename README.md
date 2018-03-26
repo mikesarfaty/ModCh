@@ -5,14 +5,14 @@
 Overview of important classes:
 
 # Accept Users #
-    This runs in a separate thread, and is responsible for taking on new users. Runs in a separate thread so that if a user is trying to connect before another user has finished connecting (ie typed name) the second user won't get a timeout
+This runs in a separate thread, and is responsible for taking on new users. Runs in a separate thread so that if a user is trying to connect before another user has finished connecting (ie typed name) the second user won't get a timeout
     
 # ChatModule (Trait) and subclasses #
-    This is what the whole thing is about, baby. But actually, the ChatModule is what lays the framework for how addons are dealt with. As I add more addons I will no doubt restructure what exactly a chatmodule is, but for now I'm happy with the things I allow "third-party" classes access to
+This is what the whole thing is about, baby. But actually, the ChatModule is what lays the framework for how addons are dealt with. As I add more addons I will no doubt restructure what exactly a chatmodule is, but for now I'm happy with the things I allow "third-party" classes access to
     
 # ReadIn #
-    Remember in Lord of the Rings, the "One Ring to rule them all"? That's what this class is. It's the one class to rule all inputs. It grabs information from every client, parses it, and adds it to the queue. 
-    NOTE: for now, this is where ChatModule parsing happens. This will probably change in the future. For now, I think it makes more logical sense to read and parse an input, then send it to the output.
+Remember in Lord of the Rings, the "One Ring to rule them all"? That's what this class is. It's the one class to rule all inputs. It grabs information from every client, parses it, and adds it to the queue. 
+NOTE: for now, this is where ChatModule parsing happens. This will probably change in the future. For now, I think it makes more logical sense to read and parse an input, then send it to the output.
     
 # ReadOut #
     Pretty simple, this thread is responsible for sending outputs to every client. Note the three different ways to send stuff:
@@ -22,8 +22,8 @@ Overview of important classes:
     Messages are filtered so that you don't get a message back that you sent.
         
 # Client #
-    Right now, clients are unique by name. I plan, very soon, to have account support for clients to have saved stats and data. I would do this by way of addon (like I said, base model simple!) where the command is !info <user> and I can have people register with !register-info <user> <info-type> <info>
-      Clients are basically a function of input/output streams, with names to keep track of what goes where.
+Right now, clients are unique by name. I plan, very soon, to have account support for clients to have saved stats and data. I would do this by way of addon (like I said, base model simple!) where the command is !info <user> and I can have people register with !register-info <user> <info-type> <info>
+Clients are basically a function of input/output streams, with names to keep track of what goes where.
 
 If you want to know details about a specific module, please check the file/documentation.
 
