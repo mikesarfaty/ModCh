@@ -15,11 +15,11 @@ Remember in Lord of the Rings, the "One Ring to rule them all"? That's what this
 NOTE: for now, this is where ChatModule parsing happens. This will probably change in the future. For now, I think it makes more logical sense to read and parse an input, then send it to the output.
     
 # ReadOut #
-    Pretty simple, this thread is responsible for sending outputs to every client. Note the three different ways to send stuff:
-        1. Send all queued messages to all users
-        2. Send a specific message to all users
-        3. Send a specific message to a specific user
-    Messages are filtered so that you don't get a message back that you sent.
+Pretty simple, this thread is responsible for sending outputs to every client. Note the three different ways to send stuff:
+  1. Send all queued messages to all users
+  2. Send a specific message to all users
+  3. Send a specific message to a specific user
+Messages are filtered so that you don't get a message back that you sent.
         
 # Client #
 Right now, clients are unique by name. I plan, very soon, to have account support for clients to have saved stats and data. I would do this by way of addon (like I said, base model simple!) where the command is !info <user> and I can have people register with !register-info <user> <info-type> <info>
@@ -36,16 +36,29 @@ PLANNED (as of 3/26) [in order of when I'm doing it]
 
 PLANNED ADDONS (besides profile, because that's a little more pertinent)
 -- TIC-TAC-TOE
+
     reason: proof of concept to work with text based images and games between two users
+    
 -- DEPENDENCY
+
     reason: let modules work together. For example, TIC-TAC-TOE could require a DirectMessage dependency to avoid a public game of tic tac toe
+    
 -- ServerLog
+
     reason: Don't have to use the command line to monitor the server anymore
+    
 -- Persistence
+
     reason: auto-restart the server if it goes down. This one's tricky, it would need to launch into a separate process that itself cannot crash. I need to do more research on this
+    
 -- Voice (in-sync with client addon)
+
     info: this is very ambitious. But would be so cool.
+    
 -- Login/verifyMe!
+
     info: Hosted on separate central server, allow users to be verified (across multiple servers)
+    
 -- Download
+
     reason: Download the conversation this session
